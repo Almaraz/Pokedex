@@ -3,6 +3,7 @@
 @import './header.css';
 @import './light.css';
 @import './stats.css';
+@import './screen.css';
 
 :root { 
   --white: #fffffe; 
