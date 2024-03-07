@@ -1,7 +1,7 @@
 @import './pokedex.css';
 @import './cover.css';
 @import './header.css';
-
+@import './light.css';
 
 :root { 
   --white: #fffffe; 
@@ -9,6 +9,7 @@
   --green: #51AE5F;
   --blue: #8DB9DC;
   --yellow: #FECB2F;
+  --red: #F4647D;
   --primary: #dc0a2d; 
   --secondary: #163355; 
   --body1: 400 0.75rem/1.5rem Roboto; 
