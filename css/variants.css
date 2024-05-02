@@ -22,8 +22,8 @@
 .vbutton.is-big {
 	margin-inline-start: 0.2rem;
 	overflow: auto;
-	inline-size: 3.5rem;
-	block-size: 3.5rem;
+	inline-size: 3rem;
+	block-size: 3rem;
 	background-color: var(--secondary);
 	border-radius: 50%;
 	border: none;
