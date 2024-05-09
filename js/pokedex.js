@@ -25,6 +25,7 @@ export async function findPokemon(id) {
     return {
         sprites: pokemon.sprites.front_default,
         description: description.flavor_text,
+        id: pokemon.id
     }
 }
 
@@ -36,4 +37,5 @@ export async function setPokemon (id){
     loader(false)
     setImage(pokemon.sprites)
     setDescription(pokemon.description)
+    return pokemon
 }
