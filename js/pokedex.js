@@ -1,7 +1,7 @@
 import { getPokemon, getSpecies } from './api.js'
 
 const $image = document.querySelector('#image')
-function setImage(image_url) {
+export function setImage(image_url) {
 	$image.src = image_url
 }
 
@@ -36,7 +36,7 @@ export async function findPokemon(id) {
 		}
 	}
 
-	console.log(sprites)
+	// console.log(sprites)
 
 	return {
 		sprites,
