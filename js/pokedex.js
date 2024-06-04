@@ -1,4 +1,5 @@
 import { getPokemon, getSpecies } from './api.js'
+import { createChart } from './charts.js'
 
 const $image = document.querySelector('#image')
 export function setImage(image_url) {
@@ -20,14 +21,14 @@ const $light = document.querySelector('#light')
 function speech(text) {
 	const utterance = new SpeechSynthesisUtterance(text)
 	// utterance.lang = 'es'
-    utterance.lang = 'es-US'
+	utterance.lang = 'es-US'
 
 	speechSynthesis.speak(utterance)
-    $light.classList.add('is-animated')
+	$light.classList.add('is-animated')
 
-    utterance.addEventListener('end', () => {
-        $light.classList.remove('is-animated')
-    })
+	utterance.addEventListener('end', () => {
+		$light.classList.remove('is-animated')
+	})
 }
 
 export async function findPokemon(id) {
@@ -37,6 +38,8 @@ export async function findPokemon(id) {
 		(flavor) => flavor.language.name === 'es'
 	)
 	const sprites = [pokemon.sprites.front_default]
+
+	const stats = pokemon.stats.map((item) => item.base_stat)
 
 	for (const item in pokemon.sprites) {
 		//Not null
@@ -56,9 +59,12 @@ export async function findPokemon(id) {
 		sprites,
 		description: description.flavor_text,
 		id: pokemon.id,
-        name: pokemon.name,
+		name: pokemon.name,
+		stats,
 	}
 }
+
+let activeChart = null
 
 export async function setPokemon(id) {
 	//Encender loader
@@ -68,6 +74,10 @@ export async function setPokemon(id) {
 	loader(false)
 	setImage(pokemon.sprites[0])
 	setDescription(pokemon.description)
-    speech(`${pokemon.name}. ${pokemon.description}`)
+	speech(`${pokemon.name}. ${pokemon.description}`)
+	if (activeChart instanceof Chart) {
+		activeChart.destroy()
+	}
+	activeChart = createChart(pokemon.stats)
 	return pokemon
 }

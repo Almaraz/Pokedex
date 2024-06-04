@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <main class="pokedex is-open" id="pokedex" tabindex="0">
+  <main class="pokedex" id="pokedex" tabindex="0">
     <section class="pokedex-main" aria-label="Información general del Pokémon">
       <div class="header-shadow">
         <div class="header">
@@ -63,10 +63,11 @@
     <div class="cover-front"></div>
     <section class="cover-back" aria-label="Estadísticas del Pokémon">
       <div class="stats">
-        Stats
+        <canvas id="stats" width="200" height="200"></canvas>
       </div>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
   <script src="./js/index.js" type="module"></script>
 </body>
 
