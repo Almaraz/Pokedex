@@ -16,6 +16,20 @@ function loader(isLoading = false) {
 	$screen.style.backgroundImage = img
 }
 
+const $light = document.querySelector('#light')
+function speech(text) {
+	const utterance = new SpeechSynthesisUtterance(text)
+	// utterance.lang = 'es'
+    utterance.lang = 'es-US'
+
+	speechSynthesis.speak(utterance)
+    $light.classList.add('is-animated')
+
+    utterance.addEventListener('end', () => {
+        $light.classList.remove('is-animated')
+    })
+}
+
 export async function findPokemon(id) {
 	const pokemon = await getPokemon(id)
 	const species = await getSpecies(id)
@@ -42,6 +56,7 @@ export async function findPokemon(id) {
 		sprites,
 		description: description.flavor_text,
 		id: pokemon.id,
+        name: pokemon.name,
 	}
 }
 
@@ -53,5 +68,6 @@ export async function setPokemon(id) {
 	loader(false)
 	setImage(pokemon.sprites[0])
 	setDescription(pokemon.description)
+    speech(`${pokemon.name}. ${pokemon.description}`)
 	return pokemon
 }
