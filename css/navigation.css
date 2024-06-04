@@ -2,7 +2,8 @@
 	--buttonSize: 1.5rem;
 	grid-area: navigation;
 	display: grid;
-	place-content: center;
+	/* place-content: center; */
+	padding-inline-start: .7rem;
 	grid-template-columns: repeat(3, var(--buttonSize));
 	grid-template-rows: repeat(3, var(--buttonSize));
 	grid-template-areas: '. up .' 'left center right' '. down .';

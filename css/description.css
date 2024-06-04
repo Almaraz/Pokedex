@@ -4,7 +4,7 @@
     padding:.5rem;
     font-family: monospace;
     color: var(--black);
-    block-size: 5.5rem;
+    block-size: 6rem;
     overflow: auto;
     border-radius: .5rem;
     border: 2px solid var(--black);
