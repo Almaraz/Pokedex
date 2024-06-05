@@ -1,3 +1,3 @@
 # Pokédex realizada con HTML, CSS y JS
 
-  <img src="https://github.com/almzdev/pokedex/blob/main/design/pokedex.png?raw=true">
+  <img src="https://raw.githubusercontent.com/Almaraz/LE-Pokemon/main/images/final-project.jpeg?token=GHSAT0AAAAAACTEZ4Z2KTQ3GM6NKVGYBRNKZS7WAIQ">
